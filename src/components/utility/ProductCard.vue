@@ -48,9 +48,9 @@ const product = computed(() => {
   };
 });
 
-const openCartModal = () => {
-  store.dispatch("useCartStore/setIsCartModalOpen", true);
-};
+// const openCartModal = () => {
+//   store.dispatch("useCartStore/setIsCartModalOpen", true);
+// };
 
 const goToPage = (id: number) => {
   router.push(`product/${id}`);
@@ -58,6 +58,12 @@ const goToPage = (id: number) => {
 
 const addToCart = () => {
   store.dispatch("useCartStore/setProductToCart", product.value);
+};
+
+const removeFromCart = (id: number) => {
+  console.log(34);
+  
+  store.dispatch("useCartStore/removeProductFromCart", id);
 };
 </script>
 
@@ -110,10 +116,10 @@ const addToCart = () => {
       </div>
       <button
         v-if="isProductInCart"
-        class="card__succes"
-        @click="openCartModal"
+        class="card__remove"
+        @click="removeFromCart(id)"
       >
-        Already is in your Cart
+        Remove from cart
       </button>
     </div>
   </div>
@@ -189,12 +195,12 @@ const addToCart = () => {
     min-width: 100%;
     cursor: pointer;
   }
-  &__succes {
+  &__remove {
     width: 100%;
     padding: 10px 20px;
     border: 1px solid transparent;
     border-radius: 6px;
-    background-color: #5ec343;
+    background-color: red;
     font-weight: 600;
     color: #fff;
     cursor: pointer;

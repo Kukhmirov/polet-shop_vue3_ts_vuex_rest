@@ -66,8 +66,6 @@ const actions = {
     commit("setDecrementQuantity", product);
   },
   removeProductFromCart({ commit }: ActionContext<State, State>, productId: number) {
-    console.log(productId);
-    
     removeLocalStorageById("cart", productId);
     commit("removeProductFromCart", productId);
   },
