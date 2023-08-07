@@ -8,9 +8,7 @@ RestApi Axios
 
 ## Для запуска проекта
 
-``` bash
-$git clone
-$ npm i
-$ npm run dev
 
-```
+  git clone
+  npm i
+  npm run dev
