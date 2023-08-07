@@ -1,5 +1,7 @@
 # Polet
 
+### Интернет магазин 
+
 Используемый стек vue 3 composition API<br/>
 Vuex<br/>
 TypeScript<br/>
